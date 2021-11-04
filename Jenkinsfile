@@ -5,14 +5,26 @@ pipeline {
         {
             steps 
             {
-                @run.bat
+                bat "python -m venv env"
+
+                bat "call ./env/Scripts/activate.bat"
+
+                bat "pip install -r requirements.txt"
+
             }
         }
         stage('--test--') 
         {
             steps 
             {
-                bat run.bat
+                bat "pytest -v -s -m check"
+            }
+        }
+        stage('--report--') 
+        {
+            steps 
+            {
+                bat "pytest -v -s -m webtest"
             }
         }
         
