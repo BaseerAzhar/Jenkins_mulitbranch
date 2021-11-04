@@ -5,21 +5,21 @@ pipeline {
         {
             steps 
             {
-                bat "pip install -r requirements.txt"
+                echo 'buid'
             }
         }
         stage('--test--') 
         {
             steps 
             {
-                bat "pytest -v -s -m check"
+                echo 'test'
             }
         }
         stage('--report--') 
         {
             steps 
             {
-                bat "pytest -v -s -m webtest"
+                echo 'report'
             }
         }
         
