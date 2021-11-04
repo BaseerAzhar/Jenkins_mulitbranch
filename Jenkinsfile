@@ -5,7 +5,7 @@ pipeline {
         {
             steps 
             {
-                run.bat
+                @run.bat
             }
         }
         stage('--test--') 
