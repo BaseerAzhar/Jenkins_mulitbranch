@@ -5,8 +5,8 @@ pipeline {
         {
             steps 
             {
-                bat virtualenv venv --distribute
-                bat . venv/bin/activate 
+                @bat virtualenv venv --distribute
+                @bat . venv/bin/activate 
                 bat "pip install -r requirements.txt"
             }
         }
