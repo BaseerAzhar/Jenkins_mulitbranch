@@ -8,6 +8,8 @@ pipeline {
                 bat "python -m venv env"
 
                 bat "call ./env/Scripts/activate.bat"
+                
+                bat "python -m pip install --upgrade pip"
 
                 bat "pip install -r requirements.txt"
 
