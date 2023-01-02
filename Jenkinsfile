@@ -5,13 +5,11 @@ pipeline {
         {
             steps 
             {
-                bat "python -m venv env"
 
-                bat "call ./env/Scripts/activate.bat"
                 
-                bat "python -m pip install --upgrade pip"
+                sh "python3 -m pip install --upgrade pip"
 
-                bat "pip install -r requirements.txt"
+                sh "pip install -r requirements.txt"
 
             }
         }
@@ -19,14 +17,14 @@ pipeline {
         {
             steps 
             {
-                bat "pytest -v -s -m check"
+                sh "pytest -v -s -m check"
             }
         }
         stage('--report--') 
         {
             steps 
             {
-                bat "pytest -v -s -m webtest"
+                sh "pytest -v -s -m webtest"
             }
         }
         
